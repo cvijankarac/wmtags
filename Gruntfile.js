@@ -13,7 +13,7 @@ module.exports = function(grunt) {
           sourceMapURL: '/css/styles.css.map'
         },
         files: {
-          "css/styles.css": "css/less/page.less" // destination file and source file
+          "css/styles.css": "css/less/base.less" // destination file and source file
         }
       }
     },

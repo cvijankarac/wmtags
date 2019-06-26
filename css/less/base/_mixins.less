@@ -1,0 +1,78 @@
+//
+//  Tables
+//  _____________________________________________
+
+.lib-table() {
+	
+	background: @color-white;
+
+    th {
+        text-align: left;
+    }
+
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                vertical-align: top;
+
+            }
+        }
+    }
+
+    > thead > tr {
+        > th,
+        > td {
+            vertical-align: bottom;
+        }
+    }
+
+    > tbody {
+    	> tr {
+
+            &:nth-child(odd),
+            &.odd {
+            	background: @color-gray1;
+            }
+
+    		> td {
+    			
+    		}
+    	}
+    }
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 10px;
+                border: 1px solid @color-gray2;
+            }
+        }
+    }
+}
+
+.lib-icon-font(
+    @_icon-font-content,
+    @_icon-font: @icomoon-font-family,
+    @_icon-font-size: @icon-font-size,
+    @_icon-font-margin: @icon-font-margin,
+) {
+	&:before {
+		content: @_icon-font-content;
+		font-family: @_icon-font;
+		font-size: @_icon-font-size;
+		margin: @icon-font-margin;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+    }
+}
