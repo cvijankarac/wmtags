@@ -3,11 +3,11 @@
 //  _____________________________________________
 
 .lib-table() {
-	
 	background: @color-white;
-
+	border-collapse: collapse;
+	td,
     th {
-        text-align: left;
+        text-align: center;
     }
 
     > tbody,
@@ -55,6 +55,9 @@
     }
 }
 
+//
+//  Icons
+//  _____________________________________________
 .lib-icon-font(
     @_icon-font-content,
     @_icon-font: @icomoon-font-family,
@@ -65,14 +68,16 @@
 		content: @_icon-font-content;
 		font-family: @_icon-font;
 		font-size: @_icon-font-size;
-		margin: @icon-font-margin;
+		margin: @_icon-font-margin;
 		speak: none;
 		font-style: normal;
 		font-weight: normal;
 		font-variant: normal;
 		text-transform: none;
-		line-height: 1;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
     }
 }
+
+
+

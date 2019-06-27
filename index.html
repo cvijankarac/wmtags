@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8">
 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
+
+
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
@@ -12,7 +15,7 @@
         <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link type="text/css" rel="stylesheet" href="css/styles.css">
+        <link type="text/css" rel="stylesheet" href="css/styles.min.css">
         
         <title>WM Tags</title>
     </head>
@@ -22,20 +25,20 @@
             <header class="header">
                 <h1>Tags</h1>
                 <div class="button-set">
-                    <a href="javascript:void(0)" class="add btn btn-primary">New</a>
-                    <a href="javascript:void(0)" class="btn btn-primary">Tag types</a>
+                    <a href="javascript:void(0)" class="add"><span>New</span></a>
+                    <a href="javascript:void(0)"><span>Tag types</span></a>
                 </div>
             </header>
 
             <table id="datatable" width="100%">
                 <thead>
                     <tr>
-                        <th>Tag ID</th>
+                        <th width="100px">Tag ID<span class="sorting-icon"></span></th>
                         <th>Tag Name</th>
                         <th>Tag Type</th>
                         <th>My Feed</th>
                         <th>My Favourites</th>
-                        <th>Action</th>
+                        <th width="100px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,7 +60,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Tag</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -66,21 +69,21 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="tag-name" class="control-label">Name</label>
-                                <input data-type="input" data-id="1" type="text" class="form-control" id="tag-name" required>
+                                <input data-type="input" data-id="1" type="text" class="form-control value-control" id="tag-name" required>
                                 <div class="invalid-feedback">Input cannot be empty.</div>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input data-type="checkbox" data-id="3" class="form-control" id="my-feed" type="checkbox">
+                                    <input data-type="checkbox" data-id="3" class="value-control" id="my-feed" type="checkbox">
                                     <label class="form-check-label" for="my-feed">My Feed</label>
                                 </div>
                                 <div class="form-check">
-                                    <input data-type="checkbox" data-id="4" class="form-control" id="my-favourites" type="checkbox">
+                                    <input data-type="checkbox" data-id="4" class="value-control" id="my-favourites" type="checkbox">
                                     <label class="form-check-label" for="my-favourites">My Favourites</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <select data-type="select" data-id="2" class="form-control" id="tag-type">
+                                <select data-type="select" data-id="2" class="value-control" id="tag-type">
                                     <option></option>
                                     <option>Football Club</option>
                                     <option>Basketball Club</option>
@@ -99,7 +102,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabelAdd">Tag</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -108,25 +111,32 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="tag-name" class="control-label">Name</label>
-                                <input data-type="input" data-id="1" type="text" class="form-control" id="tag-name" required>
+                                <input data-type="input" data-id="1" type="text" class="form-control value-control" id="tag-name" required>
                                 <div class="invalid-feedback">Input cannot be empty.</div>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input data-type="checkbox" data-id="3" class="form-control" id="my-feed" type="checkbox">
+                                    <input data-type="checkbox" data-id="3" class="value-control" id="my-feed" type="checkbox">
                                     <label class="form-check-label" for="my-feed">My Feed</label>
                                 </div>
                                 <div class="form-check">
-                                    <input data-type="checkbox" data-id="4" class="form-control" id="my-favourites" type="checkbox">
+                                    <input data-type="checkbox" data-id="4" class="value-control" id="my-favourites" type="checkbox">
                                     <label class="form-check-label" for="my-favourites">My Favourites</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <select data-type="select" data-id="2" class="form-control" id="tag-type">
+                                <label>Type <small>(Changing tag type will affect the entire tag, loss of information may occur)</small></label>
+                                <select data-type="select" data-id="2" class=" value-control" id="tag-type">
                                     <option></option>
                                     <option>Football Club</option>
                                     <option>Basketball Club</option>
                                 </select>
+                            </div>
+                            <div class="form-group form-group-upload">
+                                <input type="file" name="file" id="file" class="input-file" />
+                                <label for="file" class="file-label">
+                                    <span>Add photo</span>
+                                </label>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -149,6 +159,7 @@
               form.addEventListener('submit', function(event) {
                 event.preventDefault();
                 if (form.checkValidity() === false) {
+                  event.preventDefault();
                   event.stopPropagation();
                 }
                 form.classList.add('was-validated');

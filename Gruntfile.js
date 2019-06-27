@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          compress: false,
+          compress: true,
           yuicompress: true,
           optimization: 2,
           sourceMap: true,
@@ -15,6 +15,12 @@ module.exports = function(grunt) {
         files: {
           "css/styles.css": "css/less/base.less" // destination file and source file
         }
+      }
+    },
+    cssmin: {
+      css: {
+        src: 'css/styles.css',
+        dest: 'css/styles.min.css'
       }
     },
     watch: {
@@ -29,4 +35,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['less', 'watch']);
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 };
