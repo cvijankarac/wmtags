@@ -1,8 +1,8 @@
 # wmtags
-single page application - used to manage tags
+Single Page Application
 
 ## Installation
-Compile LESS using Grunt [pip](https://gruntjs.com/)
+Compile LESS using [Grunt](https://gruntjs.com/)
 
 ## Usage
 ```bash
