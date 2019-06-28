@@ -169,10 +169,10 @@ $(document).ready(function(){
         $('.modal-add').on('keyup change', '.value-control', function(){
             addToList = [
                 dataList.length,
-                $('.modal-add #tag-name').val(),
-                $('.modal-add #tag-type').val(),
-                $('.modal-add #my-feed').is(":checked") ? true : false,
-                $('.modal-add #my-favourites').is(":checked") ? true : false,
+                $('.modal-add #tag-name-add').val(),
+                $('.modal-add #tag-type-add').val(),
+                $('.modal-add #my-feed-add').is(":checked") ? true : false,
+                $('.modal-add #my-favourites-add').is(":checked") ? true : false,
                 null
             ]
         });

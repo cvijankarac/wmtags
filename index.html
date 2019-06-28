@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
 
 
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
         
@@ -30,15 +30,15 @@
                 </div>
             </header>
 
-            <table id="datatable" width="100%">
+            <table id="datatable">
                 <thead>
                     <tr>
-                        <th width="100px">Tag ID<span class="sorting-icon"></span></th>
+                        <th>Tag ID<span class="sorting-icon"></span></th>
                         <th>Tag Name</th>
                         <th>Tag Type</th>
                         <th>My Feed</th>
                         <th>My Favourites</th>
-                        <th width="100px">Action</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -84,9 +84,9 @@
                             </div>
                             <div class="form-group">
                                 <select data-type="select" data-id="2" class="value-control" id="tag-type">
-                                    <option></option>
-                                    <option>Football Club</option>
-                                    <option>Basketball Club</option>
+                                    <option value="">Select Option</option>
+                                    <option value="Football Club">Football Club</option>
+                                    <option value="Basketball Club">Basketball Club</option>
                                 </select>
                             </div>
                         </div>
@@ -110,31 +110,31 @@
                     <form role="form" id="addForm" class="needs-validation" novalidate>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="tag-name" class="control-label">Name</label>
-                                <input data-type="input" data-id="1" type="text" class="form-control value-control" id="tag-name" required>
+                                <label for="tag-name-add" class="control-label">Name</label>
+                                <input data-type="input" data-id="1" type="text" class="form-control value-control" id="tag-name-add" required>
                                 <div class="invalid-feedback">Input cannot be empty.</div>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input data-type="checkbox" data-id="3" class="value-control" id="my-feed" type="checkbox">
-                                    <label class="form-check-label" for="my-feed">My Feed</label>
+                                    <input data-type="checkbox" data-id="3" class="value-control" id="my-feed-add" type="checkbox">
+                                    <label class="form-check-label" for="my-feed-add">My Feed</label>
                                 </div>
                                 <div class="form-check">
-                                    <input data-type="checkbox" data-id="4" class="value-control" id="my-favourites" type="checkbox">
-                                    <label class="form-check-label" for="my-favourites">My Favourites</label>
+                                    <input data-type="checkbox" data-id="4" class="value-control" id="my-favourites-add" type="checkbox">
+                                    <label class="form-check-label" for="my-favourites-add">My Favourites</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Type <small>(Changing tag type will affect the entire tag, loss of information may occur)</small></label>
-                                <select data-type="select" data-id="2" class=" value-control" id="tag-type">
-                                    <option></option>
-                                    <option>Football Club</option>
-                                    <option>Basketball Club</option>
+                                <select data-type="select" data-id="2" class=" value-control" id="tag-type-add">
+                                    <option value="">Select Option</option>
+                                    <option value="Football Club">Football Club</option>
+                                    <option value="Basketball Club">Basketball Club</option>
                                 </select>
                             </div>
                             <div class="form-group form-group-upload">
-                                <input type="file" name="file" id="file" class="input-file" />
-                                <label for="file" class="file-label">
+                                <input type="file" name="file" id="file-add" class="input-file" />
+                                <label for="file-add" class="file-label">
                                     <span>Add photo</span>
                                 </label>
                             </div>

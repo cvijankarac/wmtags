@@ -99,6 +99,7 @@ select {
 
 #datatable {
 	.lib-table();
+	width: 100% !important;
 	thead,
 	tbody,
 	tfoot {
@@ -116,6 +117,10 @@ select {
 	}
 	thead {
 		tr:first-child {
+			th:last-child,
+			th:first-child {
+				width: 80px !important;
+			}
 			th {
 				padding: 0;
 				position: relative;
